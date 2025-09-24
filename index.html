@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="kn">
+<head>
+  <meta charset="UTF-8" />
+  <title>KN-Lang: Kannada Inspired Programming</title>
+  <script src="https://cdn.jsdelivr.net/pyodide/v0.24.1/full/pyodide.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a href="https://bhashabytes.github.io/" class="site-logo" aria-label="BhashaBytes Home">
+    <img src="logo.png" alt="BhashaBytes Logo" />
+  </a>
+  <h1>KN-Lang: Kannada-Inspired Programming</h1>
+
+  <div class="intro-card">
+    <p>
+      Welcome to <strong>KN-Lang</strong> – a programming language designed especially for Kannada speakers!
+      KN-Lang makes coding more intuitive by using Kannada words and their transliterations as keywords,
+      instead of English-based Python syntax. It’s beginner-friendly and runs fully on Python via a translation layer.
+    </p>
+    <p>
+      Write code below, run it instantly, and explore KN-Lang’s features with live examples. Learning programming
+      has never been this friendly!
+    </p>
+  </div>
+
+  <div class="container">
+    <textarea id="kannadaCode" rows="10" placeholder="Type your Kannada code here...">ತೋರಿಸಿ("Hello KN-Lang!")</textarea>
+    <br>
+    <button onclick="runCode()">Run Code</button>
+    <pre id="output">Output will appear here...</pre>
+  </div>
+
+  <h2>Documentation & Examples</h2>
+  <div class="docs">
+    <h3>Print (ತೋರಿಸಿ / torisi)</h3>
+    <pre>ತೋರಿಸಿ("Hello World")</pre>
+
+    <h3>Functions (ನಿರ್ಧರಿಸಿ / nirdharisi)</h3>
+    <pre>ನಿರ್ಧರಿಸಿ ಸೇರಿಸು(a, b):
+    ತಿರುಗಿಸಿ a + b
+ತೋರಿಸಿ("ಫಲಿತಾಂಶ =", ಸೇರಿಸು(5, 3))</pre>
+
+    <h3>Input (ತೆಗೆ / tago)</h3>
+    <pre>a = int(ತೆಗೆ("num1:"))
+b = int(ತೆಗೆ("num2:"))
+ತೋರಿಸಿ("ಮೊತ್ತ =", a + b)</pre>
+
+    <h3>Conditionals</h3>
+    <pre>i = 5
+ಒಂದರೆ i > 3:
+    ತೋರಿಸಿ("i ದೊಡ್ಡದು")
+ಇಲ್ಲದಿದ್ದರೆ i == 3:
+    ತೋರಿಸಿ("i ಸಮನಾಗಿದೆ")
+ಇಲ್ಲದರೆ:
+    ತೋರಿಸಿ("i ಚಿಕ್ಕದು")</pre>
+
+    <h3>Loops</h3>
+    <pre>ಕೋಸ್ಕರ x in [1,2,3]:
+    ತೋರಿಸಿ("x =", x)
+i = 0
+ಇದ್ದಾಗ i < 3:
+    ತೋರಿಸಿ("i =", i)
+    i += 1</pre>
+
+    <h3>Loop Control</h3>
+    <pre>ಕೋಸ್ಕರ x in [1,2,3]:
+    ಒಂದರೆ x == 2:
+        ತೋರಿಸಿ("ಎರಡು ಸಿಕ್ಕಿತು")
+        ಮುರಿಸಿ
+    ಇಲ್ಲದರೆ:
+        ತೋರಿಸಿ(x)</pre>
+
+    <h3>Booleans & None</h3>
+    <pre>ಒಂದರೆ ಸತ್ಯ:
+    ತೋರಿಸಿ("true")
+ಇಲ್ಲದಿದ್ದರೆ ಸುಳ್ಳು:
+    ತೋರಿಸಿ("false")
+ತೋರಿಸಿ("ಮೌಲ್ಯವಿಲ್ಲ =", ಇಲ್ಲ)</pre>
+
+    <h3>Exceptions</h3>
+    <pre>ಪ್ರಯತ್ನಿಸಿ:
+    1 / 0
+ಬಿಟ್ಟು ZeroDivisionError:
+    ತೋರಿಸಿ("ಶೂನ್ಯದಿಂದ ಭಾಗಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ")
+ಕೊನೆಗೆ:
+    ತೋರಿಸಿ("ಇದು ಯಾವಾಗಲೂ ನಡೆಯುತ್ತದೆ")</pre>
+
+    <h3>Imports</h3>
+    <pre>ಆಗತಿಸಿ math ಆಗಿ m
+ತೋರಿಸಿ(m.sqrt(4))</pre>
+
+    <p>Modify examples above and run your own KN-Lang code above!</p>
+  </div>
+
+  <h2>KN-Lang Keywords</h2>
+  <div class="reference-box">
+    <table>
+      <thead>
+        <tr>
+          <th>Python</th>
+          <th>Kannada Script</th>
+          <th>Transliteration</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>print</td><td>ತೋರಿಸಿ</td><td>torisi</td></tr>
+        <tr><td>input</td><td>ತೆಗೆ</td><td>tago</td></tr>
+        <tr><td>if</td><td>ಒಂದರೆ</td><td>ondare</td></tr>
+        <tr><td>elif</td><td>ಇಲ್ಲದಿದ್ದರೆ</td><td>illandare</td></tr>
+        <tr><td>else</td><td>ಇಲ್ಲದರೆ</td><td>illadare</td></tr>
+        <tr><td>for</td><td>ಕೋಸ್ಕರ</td><td>koskara</td></tr>
+        <tr><td>while</td><td>ಇದ್ದಾಗ</td><td>iddaga</td></tr>
+        <tr><td>def</td><td>ನಿರ್ಧರಿಸಿ</td><td>nirdharisi</td></tr>
+        <tr><td>class</td><td>ವರ್ಗ</td><td>varga</td></tr>
+        <tr><td>return</td><td>ತಿರುಗಿಸಿ</td><td>tirugisi</td></tr>
+        <tr><td>break</td><td>ಮುರಿಸಿ</td><td>murisi</td></tr>
+        <tr><td>continue</td><td>ಮುಂದುವರಿಸಿ</td><td>munduvarisi</td></tr>
+        <tr><td>import</td><td>ಆಗತಿಸಿ</td><td>aagatisi</td></tr>
+        <tr><td>from</td><td>ಇಂದ</td><td>inda</td></tr>
+        <tr><td>as</td><td>ಆಗಿ</td><td>agi</td></tr>
+        <tr><td>with</td><td>ಜೊತೆ</td><td>jothe</td></tr>
+        <tr><td>try</td><td>ಪ್ರಯತ್ನಿಸಿ</td><td>prayatnisi</td></tr>
+        <tr><td>except</td><td>ಬಿಟ್ಟು</td><td>bittu</td></tr>
+        <tr><td>finally</td><td>ಕೊನೆಗೆ</td><td>konege</td></tr>
+        <tr><td>True</td><td>ಸತ್ಯ</td><td>satya</td></tr>
+        <tr><td>False</td><td>ಸುಳ್ಳು</td><td>sullu</td></tr>
+        <tr><td>None</td><td>ಇಲ್ಲ</td><td>illa</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    let pyodideReady = false;
+    let pyodide;
+
+    async function loadPyodideAndPackages() {
+      pyodide = await loadPyodide();
+
+      pyodide.runPython(`
+import sys
+from js import document, prompt
+
+class OutputCatcher:
+    def write(self, s):
+        if s.strip():
+            document.getElementById("output").textContent += s + "\\n"
+    def flush(self): pass
+
+sys.stdout = OutputCatcher()
+sys.stderr = OutputCatcher()
+
+def input(msg=""):
+    resp = prompt(str(msg))
+    return "" if resp is None else str(resp)
+`);
+      pyodideReady = true;
+    }
+    loadPyodideAndPackages();
+
+    const mapping = {
+      "ತೋರಿಸಿ": "print", "torisi": "print",
+      "ತೆಗೆ": "input", "tago": "input",
+      "ಒಂದರೆ": "if", "ondare": "if",
+      "ಇಲ್ಲದಿದ್ದರೆ": "elif", "illandare": "elif",
+      "ಇಲ್ಲದರೆ": "else", "illadare": "else",
+      "ಕೋಸ್ಕರ": "for", "koskara": "for",
+      "ಇದ್ದಾಗ": "while", "iddaga": "while",
+      "ನಿರ್ಧರಿಸಿ": "def", "nirdharisi": "def",
+      "ವರ್ಗ": "class", "varga": "class",
+      "ತಿರುಗಿಸಿ": "return", "tirugisi": "return",
+      "ಮುರಿಸಿ": "break", "murisi": "break",
+      "ಮುಂದುವರಿಸಿ": "continue", "munduvarisi": "continue",
+      "ಆಗತಿಸಿ": "import", "aagatisi": "import",
+      "ಇಂದ": "from", "inda": "from",
+      "ಆಗಿ": "as", "agi": "as",
+      "ಜೊತೆ": "with", "jothe": "with",
+      "ಪ್ರಯತ್ನಿಸಿ": "try", "prayatnisi": "try",
+      "ಬಿಟ್ಟು": "except", "bittu": "except",
+      "ಕೊನೆಗೆ": "finally", "konege": "finally",
+      "ಸತ್ಯ": "True", "satya": "True",
+      "ಸುಳ್ಳು": "False", "sullu": "False",
+      "ಇಲ್ಲ": "None", "illa": "None"
+    };
+
+    function escapeRegExp(str) {
+      return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    }
+
+    function translate(code) {
+      for (let kn in mapping) {
+        const re = new RegExp(`(?<!\\w)${escapeRegExp(kn)}(?!\\w)`, 'gu');
+        code = code.replace(re, mapping[kn]);
+      }
+      return code;
+    }
+
+    async function runCode() {
+      if (!pyodideReady) {
+        alert("Pyodide is still loading...");
+        return;
+      }
+      document.getElementById("output").textContent = "";
+      const rawCode = document.getElementById("kannadaCode").value;
+      const pyCode = translate(rawCode);
+
+      try {
+        await pyodide.runPythonAsync(pyCode);
+      } catch (err) {
+        document.getElementById("output").textContent += "Error: " + err + "\\n";
+      }
+    }
+  </script>
+</body>
+</html>
